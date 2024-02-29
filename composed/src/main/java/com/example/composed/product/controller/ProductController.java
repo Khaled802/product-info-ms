@@ -1,5 +1,6 @@
 package com.example.composed.product.controller;
 
+import com.example.composed.product.Recommendation;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,9 @@ import com.example.composed.product.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+import java.util.Map;
+
 
 @RestController
 @RequestMapping("/products")
@@ -18,7 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class ProductController {
     private final ProductService productService;
 
-    @GetMapping("/hi")
+    @GetMapping("/hi/hi")
     public String getMethodName() {
         return "Hello";
     }
@@ -26,6 +30,11 @@ public class ProductController {
     @GetMapping("/{id}")
     Product getProduct(@PathVariable Long id) {
         return productService.getProduct(id);
+    }
+
+    @GetMapping("/recommendations/{productId}")
+    List<Recommendation> getRecommendations(@PathVariable Long productId) {
+        return productService.getRecommendationByProductId(productId);
     }
 
     

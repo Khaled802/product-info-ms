@@ -23,8 +23,8 @@ public class ProductControllerTest {
     @Autowired
     private WebTestClient webTestClient;
 
-    private final Long ACCEPTED_ID = 1L;
-    private final Long NOT_FOUND_ID = 2L;
+    private final long ACCEPTED_ID = 1L;
+    private final long NOT_FOUND_ID = 2L;
 
     @MockBean
     private ProductService productService;
