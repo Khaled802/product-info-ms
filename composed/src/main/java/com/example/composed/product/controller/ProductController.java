@@ -1,6 +1,7 @@
 package com.example.composed.product.controller;
 
 import com.example.composed.product.Recommendation;
+import com.example.composed.product.Review;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,6 +36,11 @@ public class ProductController {
     @GetMapping("/recommendations/{productId}")
     List<Recommendation> getRecommendations(@PathVariable Long productId) {
         return productService.getRecommendationByProductId(productId);
+    }
+
+    @GetMapping("/reviews/{productId}")
+    List<Review> getReviews(@PathVariable Long productId) {
+        return productService.getReviewsByProductId(productId);
     }
 
     
