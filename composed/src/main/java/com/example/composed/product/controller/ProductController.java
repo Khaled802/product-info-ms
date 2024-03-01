@@ -1,5 +1,6 @@
 package com.example.composed.product.controller;
 
+import com.example.composed.product.ProductFull;
 import com.example.composed.product.Recommendation;
 import com.example.composed.product.Review;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -43,5 +44,8 @@ public class ProductController {
         return productService.getReviewsByProductId(productId);
     }
 
-    
+    @GetMapping("/full/{productId}")
+    ProductFull getProductFullInfo(@PathVariable Long productId) {
+       return productService.getProductFullInfo(productId);
+    }
 }

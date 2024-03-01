@@ -1,0 +1,1 @@
+{"product":{"id":1,"name":"Milk","weight":1000,"place":"Maraee"},"reviews":[{"id":1,"productId":1,"author":"Ali","subject":"Reviewing milk teste","content":"...."}],"recommendations":[{"id":2,"productId":1,"auth":"Ahmed","rate":2,"content":"It is yukkkkky"},{"id":1,"productId":1,"auth":"Khaled","rate":3,"content":"It is nice but not the best"}]}

@@ -1,5 +1,6 @@
 package com.example.composed.product.service;
 
+import com.example.composed.product.ProductFull;
 import com.example.composed.product.Recommendation;
 import com.example.composed.product.Review;
 import org.springframework.core.ParameterizedTypeReference;
@@ -60,4 +61,11 @@ public class ProductServiceImp implements ProductService {
         }
     }
 
+    @Override
+    public ProductFull getProductFullInfo(long productId) {
+        Product product = getProduct(productId);
+        List<Review> reviews = getReviewsByProductId(productId);
+        List<Recommendation> recommendations = getRecommendationByProductId(productId);
+        return new ProductFull(product, reviews, recommendations);
+    }
 }

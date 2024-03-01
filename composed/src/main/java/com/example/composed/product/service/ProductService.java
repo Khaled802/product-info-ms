@@ -1,6 +1,7 @@
 package com.example.composed.product.service;
 
 import com.example.composed.product.Product;
+import com.example.composed.product.ProductFull;
 import com.example.composed.product.Recommendation;
 import com.example.composed.product.Review;
 
@@ -11,4 +12,5 @@ public interface ProductService {
 
     List<Recommendation> getRecommendationByProductId(long productId);
     List<Review> getReviewsByProductId(long productId);
+    ProductFull getProductFullInfo(long productId);
 }
